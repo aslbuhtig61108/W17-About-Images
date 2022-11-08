@@ -1,0 +1,9 @@
+AbstractTextEditor.Color.Background.SystemDefault=false
+AbstractTextEditor.Color.SelectionBackground.SystemDefault=false
+AbstractTextEditor.Color.SelectionForeground.SystemDefault=false
+STS4BootMarkerIndicationColor=54,81,25
+eclipse.preferences.version=1
+printMargin=true
+printMarginColumn=100
+spacesForTabs=true
+tabWidth=2

@@ -1,0 +1,27 @@
+package com.promineotech.jeep.controller.support;
+
+public class CreateOrderTestSupport extends BaseTest {
+  /**
+   * 
+   * @return
+   */
+  protected String createOrderBody() {
+    // formatter:off
+    return "{\n"
+        + "  \"customer\":\"TSCHIDA_ANUSH\",\n"
+        + "  \"model\":\"CHEROKEE\",\n"
+        + "  \"trim\":\"Trailhawk\",\n"
+        + "  \"doors\":4,\n"
+        + "  \"color\":\"EXT_SANGRIA\",\n"
+        + "  \"engine\":\"6_4_GAS\",\n"
+        + "  \"tire\":\"295_MICHELIN\",\n"
+        + "  \"options\": [\n"
+        + "    \"DOOR_RIDGE_TUBE\",\n"
+        + "    \"EXT_AEV_LIFT\",\n"
+        + "    \"TOP_MOPAR_POWER\",\n"
+        + "    \"WHEEL_TERA_NOMAD\",\n"
+        +"   ]\n"
+        + "}";
+    // formatter:on
+  } 
+}
