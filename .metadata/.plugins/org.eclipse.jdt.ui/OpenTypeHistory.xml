@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-    <typeInfo handle="=jeep-sales/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.promineotech.jeep.controller{JeepSalesController.java[JeepSalesController" modifiers="513" timestamp="1667636108000"/>
+    <typeInfo handle="=jeep-sales/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.promineotech.jeep.controller{JeepSalesController.java[JeepSalesController" modifiers="513" timestamp="1667879018556"/>
     <typeInfo handle="=jeep-sales/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.promineotech.jeep.controller{JeepOrderController.java[JeepOrderController" modifiers="513" timestamp="1667636108000"/>
     <typeInfo handle="=jeep-sales/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.promineotech.jeep.service{JeepOrderService.java[JeepOrderService" modifiers="513" timestamp="1667636108000"/>
     <typeInfo handle="=jeep-sales/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.promineotech.jeep.dao{JeepOrderDao.java[JeepOrderDao" modifiers="513" timestamp="1667636108000"/>

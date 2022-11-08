@@ -1,2 +1,3 @@
 1667874734477	Extract constant 'JEEP_IMAGE'
 1667881618096	Rename local variable 'string'
+1667889848985	Extract method 'assertImageUpload'
