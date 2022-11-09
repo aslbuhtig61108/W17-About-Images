@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\nilat\Desktop\Promineo BESDC0623"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -43,11 +44,13 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="personal-library-utility-management-system"/>
 			<item value="com.promineotech"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="personal-library-utility-management-system"/>
 			<item value="jeep-sales"/>
 		</list>
 		<list key="projectNameTemplate">

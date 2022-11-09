@@ -30,33 +30,36 @@ public class DefaultJeepSalesService implements JeepSalesService {
   @Autowired
   private JeepSalesDao jeepSalesDao;
 
+  @Transactional(readOnly = true)
+  @Override
+  public Image retrieveImage(String imageId) {
+    return jeepSalesDao.retrieveImage(imageId)
+        .orElseThrow(() -> new NoSuchElementException(
+            "Could not find image with ID=" + imageId));
+  }
+
   @Transactional
   @Override
   public String uploadImage(MultipartFile file, Long modelPK) {
     String imageId = UUID.randomUUID().toString();
-    
-    try(InputStream inputStream = file.getInputStream()) {
+
+    try (InputStream inputStream = file.getInputStream()) {
       BufferedImage bufferedImage = ImageIO.read(inputStream);
-      
+
       // @formatter: off
-      Image image = Image.builder()
-          .modelFK(modelPK)
-          .imageId(imageId)
-          .width(bufferedImage.getWidth())
-          .height(bufferedImage.getHeight())
-          .mimeType(ImageMIMEType.IMAGE_JPEG)
-          .name(file.getOriginalFilename())
-          .data(toByteArray(bufferedImage, "jpeg"))
-          .build();
+      Image image =
+          Image.builder().modelFK(modelPK).imageId(imageId).width(bufferedImage.getWidth())
+              .height(bufferedImage.getHeight()).mimeType(ImageMIMEType.IMAGE_JPEG)
+              .name(file.getOriginalFilename()).data(toByteArray(bufferedImage, "jpeg")).build();
       // @formatter: on
 
       jeepSalesDao.saveImage(image);
       return imageId;
-      
+
     } catch (IOException e) {
-        throw new UncheckedIOException(e);
+      throw new UncheckedIOException(e);
     }
-}
+  }
 
   /**
    * 
@@ -67,14 +70,14 @@ public class DefaultJeepSalesService implements JeepSalesService {
   private byte[] toByteArray(BufferedImage bufferedImage, String renderType) {
     try {
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
-      
+
       if (!ImageIO.write(bufferedImage, renderType, baos)) {
         throw new RuntimeException("Could not write to image buffer");
       }
-      
+
       return baos.toByteArray();
     } catch (IOException e) {
-        throw new UncheckedIOException(e); 
+      throw new UncheckedIOException(e);
     }
   }
 

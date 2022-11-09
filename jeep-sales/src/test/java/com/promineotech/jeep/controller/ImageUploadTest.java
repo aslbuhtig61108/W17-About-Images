@@ -2,7 +2,8 @@ package com.promineotech.jeep.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import java.io.IOException;
 import java.io.InputStream;
@@ -50,8 +51,21 @@ class ImageUploadTest {
     String json = assertImageUpload();
     String imageId = extractImageId(json);
     
-    System.out.println("json=" + json);
-    System.out.println("imageId=" + imageId);
+    // System.out.println("json=" + json);
+    // System.out.println("imageId=" + imageId);
+    
+    assertImageRetrieval(imageId);
+    
+  }
+
+  private void assertImageRetrieval(String imageId) throws Exception {
+    // formatter: off
+    mockMvc
+    .perform(get("/jeeps/image/" + imageId))
+    .andExpect(status().isOk())
+    .andExpect(header().string("Content-Type", "image/jpeg"));
+ // formatter: on
+    
   }
 
   private String extractImageId(String json) {

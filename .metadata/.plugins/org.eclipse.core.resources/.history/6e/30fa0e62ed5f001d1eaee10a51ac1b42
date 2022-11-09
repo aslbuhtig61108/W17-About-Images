@@ -1,0 +1,30 @@
+package com.promineotech.jeep.entity;
+
+public enum ImageMIMEType {
+  IMAGE_JPEG("image/jpeg");
+  private String mimeType;
+
+  private ImageMIMEType(String mimeType) {
+   this.mimeType = mimeType;
+  }
+
+  /**
+   * 
+   * @return
+   */
+  public String getMimeType() {
+    return mimeType;
+  }
+  
+  public ImageMIMEType fromString(String mimeType) {
+    for (ImageMimeType imt : ImageMimeType.values()) {
+      if(imt.getMimeType().equals(mimeType)) {
+        return imt;
+      }
+    }
+  }
+
+
+
+
+}

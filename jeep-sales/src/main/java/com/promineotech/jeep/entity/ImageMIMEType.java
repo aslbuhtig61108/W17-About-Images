@@ -15,4 +15,18 @@ public enum ImageMIMEType {
   public String getMimeType() {
     return mimeType;
   }
+  
+  public static ImageMIMEType fromString(String mimeType) {
+    for (ImageMIMEType imt : ImageMIMEType.values()) {
+      if(imt.getMimeType().equals(mimeType)) {
+        return imt;
+      }
+    }
+    
+    return null;
+  }
+
+
+
+
 }
